@@ -1,66 +1,79 @@
-// Hero button
-function showMessage() {
-    alert("Welcome! Start learning life skills now 🚀");
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Skills for Teens</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-// Tips for each section
-const tipsData = {
-    cv: [
-        "Use clear formatting",
-        "Include your contact info",
-        "Highlight achievements, not just duties"
-    ],
-    interview: [
-        "Research the company",
-        "Dress appropriately",
-        "Prepare answers for common questions"
-    ],
-    money: [
-        "Create a monthly budget",
-        "Save at least 10% of income",
-        "Avoid unnecessary spending"
-    ],
-    time: [
-        "Use a daily planner",
-        "Prioritize tasks",
-        "Set small goals each day"
-    ]
-};
+<header>
+    <div class="container">
+        <h1>Life Skills for Teens</h1>
+        <p class="subtitle">Learn real skills for a better future!</p>
+        <nav>
+            <a href="#cv">CV</a>
+            <a href="#interview">Interview</a>
+            <a href="#money">Money</a>
+            <a href="#time">Time</a>
+        </nav>
+    </div>
+</header>
 
-// Show tips function
-function showTips(section) {
-    const container = document.getElementById(section + "-tips");
-    const tips = tipsData[section];
-    container.innerHTML = "<ul>" + tips.map(tip => "<li>✅ " + tip + "</li>").join('') + "</ul>";
-}
+<main class="container">
 
-// Simple quiz function
-function takeQuiz(section) {
-    let question = "";
-    let correctAnswer = "";
-    switch(section) {
-        case "cv":
-            question = "What is most important in a CV?";
-            correctAnswer = "Achievements";
-            break;
-        case "interview":
-            question = "Should you research the company before interview? (Yes/No)";
-            correctAnswer = "Yes";
-            break;
-        case "money":
-            question = "Should you save part of your income? (Yes/No)";
-            correctAnswer = "Yes";
-            break;
-        case "time":
-            question = "Is it useful to plan your day? (Yes/No)";
-            correctAnswer = "Yes";
-            break;
-    }
+    <section class="hero">
+        <h2>Get Started Now!</h2>
+        <p>Interactive tips and quizzes to improve your life skills.</p>
+        <button onclick="showMessage()">Start Learning</button>
+    </section>
 
-    const answer = prompt(question);
-    if(answer && answer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
-        alert("🎉 Correct!");
-    } else {
-        alert("❌ Try again! Hint: " + correctAnswer);
-    }
-}
+    <section id="cv" class="card">
+        <h2>📄 CV Guide</h2>
+        <p>Learn how to create a professional CV step by step.</p>
+        <button class="tips-btn" data-section="cv">View Tips</button>
+        <button class="quiz-btn" data-section="cv">Take Quiz</button>
+        <div id="cv-tips" class="tips"></div>
+        <div id="cv-result" class="result"></div>
+    </section>
+
+    <section id="interview" class="card">
+        <h2>💼 Interview Tips</h2>
+        <p>Prepare for interviews and feel confident.</p>
+        <button class="tips-btn" data-section="interview">View Tips</button>
+        <button class="quiz-btn" data-section="interview">Take Quiz</button>
+        <div id="interview-tips" class="tips"></div>
+        <div id="interview-result" class="result"></div>
+    </section>
+
+    <section id="money" class="card">
+        <h2>💰 Money Basics</h2>
+        <p>Understand saving, budgeting, and smart spending.</p>
+        <button class="tips-btn" data-section="money">View Tips</button>
+        <button class="quiz-btn" data-section="money">Take Quiz</button>
+        <div id="money-tips" class="tips"></div>
+        <div id="money-result" class="result"></div>
+    </section>
+
+    <section id="time" class="card">
+        <h2>⏰ Time Management</h2>
+        <p>Learn how to organize your day and stay productive.</p>
+        <button class="tips-btn" data-section="time">View Tips</button>
+        <button class="quiz-btn" data-section="time">Take Quiz</button>
+        <div id="time-tips" class="tips"></div>
+        <div id="time-result" class="result"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Life Skills for Teens | Created by You</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
