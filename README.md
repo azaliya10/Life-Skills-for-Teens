@@ -1,1 +1,2 @@
 # Life-Skills-for-Teens
+Life Skills for Teens is a web-based platform designed to help teenagers develop essential real-life skills that are often not taught in school. The website includes simple and practical guides on creating a CV, preparing for interviews, managing money, and improving time management. It is built with a clean, modern design to make learning easy and engaging. The goal of this project is to support young people in becoming more independent, confident, and prepared for future challenges.
