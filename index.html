@@ -1,90 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life Skills for Teens</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Анимированный фон -->
-<div class="animated-bg">
-  <span class="icon">💰</span>
-  <span class="icon">📚</span>
-  <span class="icon">⏰</span>
-  <span class="icon">💡</span>
-  <span class="icon">💵</span>
-  <span class="icon">📝</span>
-  <span class="icon">📈</span>
-  <span class="icon">⏳</span>
-</div>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #00f5ff;
+            --accent: #ff00cc;
+            --dark: #0a0a1f;
+            --card: rgba(20, 25, 50, 0.85);
+        }
 
-<header>
-    <div class="container">
-        <h1>Life Skills for Teens</h1>
-        <p class="subtitle">Learn real skills for a better future!</p>
-        <nav>
-            <a href="#cv">CV</a>
-            <a href="#interview">Interview</a>
-            <a href="#money">Money</a>
-            <a href="#time">Time</a>
-        </nav>
-    </div>
-</header>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<main class="container">
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a0033 50%, #0a0a1f 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-    <section class="hero">
-        <h2>Get Started Now!</h2>
-        <p>Interactive tips and quizzes to improve your life skills.</p>
-        <button onclick="showMessage()">Start Learning</button>
-    </section>
+        /* Анимированный фон */
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
 
-    <section id="cv" class="card">
-        <h2>📄 CV Guide</h2>
-        <p>Learn how to create a professional CV step by step.</p>
-        <button class="tips-btn" data-section="cv">View Tips</button>
-        <button class="quiz-btn" data-section="cv">Take Quiz</button>
-        <div id="cv-tips" class="tips"></div>
-        <div id="cv-result" class="result"></div>
-    </section>
+        .icon {
+            position: absolute;
+            font-size: 3rem;
+            animation: float 25s linear infinite;
+            filter: drop-shadow(0 0 10px var(--primary));
+        }
 
-    <section id="interview" class="card">
-        <h2>💼 Interview Tips</h2>
-        <p>Prepare for interviews and feel confident.</p>
-        <button class="tips-btn" data-section="interview">View Tips</button>
-        <button class="quiz-btn" data-section="interview">Take Quiz</button>
-        <div id="interview-tips" class="tips"></div>
-        <div id="interview-result" class="result"></div>
-    </section>
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(720deg); }
+        }
 
-    <section id="money" class="card">
-        <h2>💰 Money Basics</h2>
-        <p>Understand saving, budgeting, and smart spending.</p>
-        <button class="tips-btn" data-section="money">View Tips</button>
-        <button class="quiz-btn" data-section="money">Take Quiz</button>
-        <div id="money-tips" class="tips"></div>
-        <div id="money-result" class="result"></div>
-    </section>
-
-    <section id="time" class="card">
-        <h2>⏰ Time Management</h2>
-        <p>Learn how to organize your day and stay productive.</p>
-        <button class="tips-btn" data-section="time">View Tips</button>
-        <button class="quiz-btn" data-section="time">Take Quiz</button>
-        <div id="time-tips" class="tips"></div>
-        <div id="time-result" class="result"></div>
-    </section>
-
-</main>
-
-<footer>
-    <p>© 2026 Life Skills for Teens | Created by You</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+        header {
+            background: rgba(10, 10, 31, 0.95);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top
