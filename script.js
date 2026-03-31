@@ -3,7 +3,7 @@ function showMessage() {
     alert("Welcome! Start learning life skills now 🚀");
 }
 
-// Tips for each section
+// Tips для каждой секции
 const tipsData = {
     cv: [
         "Use clear formatting",
@@ -27,40 +27,65 @@ const tipsData = {
     ]
 };
 
-// Show tips function
+// Quiz вопросы для каждой секции
+const quizData = {
+    cv: [
+        {q: "What is most important in a CV?", a: "Achievements"},
+        {q: "Should you include contact info?", a: "Yes"}
+    ],
+    interview: [
+        {q: "Should you research the company? (Yes/No)", a: "Yes"},
+        {q: "Is it important to dress professionally? (Yes/No)", a: "Yes"}
+    ],
+    money: [
+        {q: "Should you save part of your income? (Yes/No)", a: "Yes"},
+        {q: "Is overspending smart? (Yes/No)", a: "No"}
+    ],
+    time: [
+        {q: "Is planning your day useful? (Yes/No)", a: "Yes"},
+        {q: "Should you set small goals? (Yes/No)", a: "Yes"}
+    ]
+};
+
+// Показать советы
 function showTips(section) {
     const container = document.getElementById(section + "-tips");
     const tips = tipsData[section];
     container.innerHTML = "<ul>" + tips.map(tip => "<li>✅ " + tip + "</li>").join('') + "</ul>";
 }
 
-// Simple quiz function
+// Пройти мини-квиз с подсчётом баллов
 function takeQuiz(section) {
-    let question = "";
-    let correctAnswer = "";
-    switch(section) {
-        case "cv":
-            question = "What is most important in a CV?";
-            correctAnswer = "Achievements";
-            break;
-        case "interview":
-            question = "Should you research the company before interview? (Yes/No)";
-            correctAnswer = "Yes";
-            break;
-        case "money":
-            question = "Should you save part of your income? (Yes/No)";
-            correctAnswer = "Yes";
-            break;
-        case "time":
-            question = "Is it useful to plan your day? (Yes/No)";
-            correctAnswer = "Yes";
-            break;
+    const questions = quizData[section];
+    let score = 0;
+
+    questions.forEach(item => {
+        const answer = prompt(item.q);
+        if(answer && answer.trim().toLowerCase() === item.a.toLowerCase()) {
+            score++;
+        }
+    });
+
+    const resultContainer = document.getElementById(section + "-result");
+    const total = questions.length;
+    let message = `You scored ${score} out of ${total}.\n`;
+
+    if(score === total) {
+        message += "🎉 Excellent! You mastered this section.";
+    } else if(score >= total/2) {
+        message += "✅ Good! Review the tips to improve.";
+    } else {
+        message += "❌ You need to study more. Follow the tips carefully.";
     }
 
-    const answer = prompt(question);
-    if(answer && answer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
-        alert("🎉 Correct!");
-    } else {
-        alert("❌ Try again! Hint: " + correctAnswer);
-    }
+    resultContainer.innerHTML = message.replace(/\n/g, "<br>");
 }
+
+// Добавляем обработчики кнопок после загрузки
+document.querySelectorAll(".tips-btn").forEach(btn => {
+    btn.addEventListener("click", () => showTips(btn.dataset.section));
+});
+
+document.querySelectorAll(".quiz-btn").forEach(btn => {
+    btn.addEventListener("click", () => takeQuiz(btn.dataset.section));
+});
