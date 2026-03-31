@@ -1,19 +1,16 @@
-/* Общие настройки */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #b39ddb, #ccff90); /* фиолет + салатовый */
+    background: linear-gradient(135deg, #b39ddb, #ccff90);
     color: #333;
 }
 
-/* Контейнер */
 .container {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Header */
 header {
     background: linear-gradient(90deg, #7b1fa2, #00c853);
     color: white;
@@ -34,7 +31,6 @@ header h1 {
     opacity: 0.9;
 }
 
-/* Навигация */
 nav {
     margin-top: 15px;
 }
@@ -44,7 +40,6 @@ nav a {
     margin: 0 12px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -52,7 +47,6 @@ nav a:hover {
     color: #ffeb3b;
 }
 
-/* Hero блок */
 .hero {
     text-align: center;
     padding: 40px 20px;
@@ -81,7 +75,6 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Карточки */
 .card {
     background: white;
     margin: 20px 0;
@@ -102,7 +95,6 @@ nav a:hover {
     color: #7b1fa2;
 }
 
-/* Кнопки в карточках */
 button.tips-btn, button.quiz-btn {
     margin: 8px 5px 0 0;
     padding: 10px 20px;
@@ -131,7 +123,6 @@ button.quiz-btn:hover {
     background: #6a1b9a;
 }
 
-/* Tips и результат */
 .tips, .result {
     margin-top: 10px;
     padding: 10px;
@@ -140,7 +131,6 @@ button.quiz-btn:hover {
     border-radius: 8px;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 15px;
@@ -149,7 +139,6 @@ footer {
     margin-top: 30px;
 }
 
-/* Адаптация */
 @media (max-width: 600px) {
     nav a {
         display: block;
