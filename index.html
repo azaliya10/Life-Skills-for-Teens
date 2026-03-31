@@ -4,21 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life Skills for Teens</title>
-
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
     <div class="container">
         <h1>Life Skills for Teens</h1>
         <p class="subtitle">Simple skills for a better future</p>
-
         <nav>
             <a href="#cv">CV</a>
             <a href="#interview">Interview</a>
@@ -36,28 +30,40 @@
         <button onclick="showMessage()">Start Learning</button>
     </section>
 
+    <!-- CV Section -->
     <section id="cv" class="card">
         <h2>📄 CV Guide</h2>
         <p>Learn how to create a professional CV step by step.</p>
-        <button>Learn More</button>
+        <button onclick="showTips('cv')">View Tips</button>
+        <button onclick="takeQuiz('cv')">Take Quiz</button>
+        <div id="cv-tips" class="tips"></div>
     </section>
 
+    <!-- Interview Section -->
     <section id="interview" class="card">
         <h2>💼 Interview Tips</h2>
         <p>Prepare for interviews and feel confident.</p>
-        <button>Learn More</button>
+        <button onclick="showTips('interview')">View Tips</button>
+        <button onclick="takeQuiz('interview')">Take Quiz</button>
+        <div id="interview-tips" class="tips"></div>
     </section>
 
+    <!-- Money Section -->
     <section id="money" class="card">
         <h2>💰 Money Basics</h2>
         <p>Understand saving, budgeting, and smart spending.</p>
-        <button>Learn More</button>
+        <button onclick="showTips('money')">View Tips</button>
+        <button onclick="takeQuiz('money')">Take Quiz</button>
+        <div id="money-tips" class="tips"></div>
     </section>
 
+    <!-- Time Section -->
     <section id="time" class="card">
         <h2>⏰ Time Management</h2>
         <p>Learn how to organize your day and stay productive.</p>
-        <button>Learn More</button>
+        <button onclick="showTips('time')">View Tips</button>
+        <button onclick="takeQuiz('time')">Take Quiz</button>
+        <div id="time-tips" class="tips"></div>
     </section>
 
 </main>
@@ -67,6 +73,5 @@
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
